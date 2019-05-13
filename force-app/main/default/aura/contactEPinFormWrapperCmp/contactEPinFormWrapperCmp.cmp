@@ -1,0 +1,7 @@
+<aura:component implements="lightning:actionOverride,
+                            force:lightningQuickActionWithoutHeader,
+                            force:hasRecordId,
+                            lightning:isUrlAddressable,
+                            flexipage:availableForAllPageTypes">
+    <c:contactEPinFormLWC recordId="{!v.recordId}" oncerrarquickaction="{!c.cerrarQuickAction}" />
+</aura:component>	
