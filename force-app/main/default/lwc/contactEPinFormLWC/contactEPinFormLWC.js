@@ -1,9 +1,11 @@
 import { LightningElement, api, track } from 'lwc';
+// User Id
 import uId from '@salesforce/user/Id';
+// Importa metdodo Apex
 import userHasEncryptedData from '@salesforce/apex/UserUtils.userHasEncryptedData';
 
-export default class ContactForm extends LightningElement {
-    @api recordId;
+export default class ContactEPinFormLWC extends LightningElement {
+    @api recordId; 
     @track viewEncryptedData;
     @track error;
     @track showSpinner = true;
@@ -27,7 +29,6 @@ export default class ContactForm extends LightningElement {
 
     handleLoad(event) {
         this.showSpinner= false;
-        console.log(this.viewEncryptedData,this.ePin, event.detail.records[this.recordId].fields.e_Pin__c.value );
         if (!this.ePin) {
             const ePinActual = event.detail.records[this.recordId].fields.e_Pin__c.value;
             this.ePin = this.viewEncryptedData ?
@@ -38,7 +39,6 @@ export default class ContactForm extends LightningElement {
     handleSubmit(event) {
         event.preventDefault(); // stop the form from submitting
         const fields = event.detail.fields;
-        console.log('handleSubmit', this.ePin, fields.e_Pin__c);
         fields.e_Pin__c = this.ePin;
         this.template.querySelector('lightning-record-edit-form').submit(fields);        
     }
