@@ -5,6 +5,9 @@
   "settings": {
     "orgPreferenceSettings": {
       "s1DesktopEnabled": true
-    }
-  }
+    }    
+  },
+  "hasSampleData": true,
+  "language": "en_US",
+  "country": "US"
 }
