@@ -1,6 +1,6 @@
 public with sharing class UserUtils {
     // Chequea por User Id si tiene asignado algun permission set con View Encrypted Data
-    @AuraEnabled
+    @AuraEnabled(cacheable=true)
     public static boolean userHasEncryptedData(Id userId){
         List<PermissionSetAssignment> psaEncrypt = [SELECT Id
                                                    FROM PermissionSetAssignment
