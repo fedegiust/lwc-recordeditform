@@ -1,50 +1,50 @@
 <template>
-        <lightning-record-edit-form 
-            record-id={recordId}
-            object-api-name="Contact"
-            form-class="slds-p-horizontal_small"
-            onload={handleLoad}
-            onsubmit={handleSubmit}
-            onsuccess={handleSuccess}
-            fields={fields}>
-            <lightning-messages></lightning-messages>    
-            <lightning-card>
-                <h3 slot="title">
-                    <lightning-icon icon-name="action:new_contact" size="small"></lightning-icon>
-                    Modificar e-Pin Form
-                </h3> 
-                <div slot="footer">
-                    <lightning-button
-                        class="slds-m-top_small"
-                        variant="brand"
-                        type="submit"
-                        name="update"
-                        label="Update">
-                    </lightning-button>
-                </div>                
-    
-                <template if:true={showSpinner}>
-                    <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>              
-                </template>
-                <template if:true={error}>
-                    Ocurrio un error: {error}
-                </template>
-                <lightning-output-field field-name="FirstName">
-                </lightning-output-field>
-                <lightning-output-field field-name="LastName">
-                </lightning-output-field>
-                <lightning-input-field field-name="e_Pin__c" class="slds-hide">
-                </lightning-input-field>                    
-                <lightning-input 
-                    name="ePin" 
-                    id="ePin" 
-                    value={ePin} 
-                    onblur={handlePinBlur} 
-                    maxlength="16"
-                    minlength="6"
-                    label="e-Pin"></lightning-input>        
-                <lightning-input-field field-name="Birthdate">
-                </lightning-input-field>
-            </lightning-card>
-        </lightning-record-edit-form>
-    </template>
+    <lightning-record-edit-form 
+        record-id={recordId}
+        object-api-name="Contact"
+        form-class="slds-p-horizontal_small"
+        onload={handleLoad}
+        onsubmit={handleSubmit}
+        onsuccess={handleSuccess}
+        fields={fields}>
+        <lightning-messages></lightning-messages>    
+        <lightning-card>
+            <h3 slot="title">
+                <lightning-icon icon-name="action:new_contact" size="small"></lightning-icon>
+                Modificar e-Pin Form
+            </h3> 
+            <div slot="footer">
+                <lightning-button
+                    class="slds-m-top_small"
+                    variant="brand"
+                    type="submit"
+                    name="update"
+                    label="Update">
+                </lightning-button>
+            </div>                
+
+            <template if:true={showSpinner}>
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>              
+            </template>
+            <template if:true={error}>
+                Ocurrio un error: {error}
+            </template>
+            <lightning-output-field field-name="FirstName">
+            </lightning-output-field>
+            <lightning-output-field field-name="LastName">
+            </lightning-output-field>
+            <lightning-input-field field-name="e_Pin__c" class="slds-hide">
+            </lightning-input-field>                    
+            <lightning-input 
+                name="ePin" 
+                id="ePin" 
+                value={ePin} 
+                onblur={handlePinBlur} 
+                maxlength="16"
+                minlength="6"
+                label="e-Pin"></lightning-input>        
+            <lightning-input-field field-name="Birthdate">
+            </lightning-input-field>
+        </lightning-card>
+    </lightning-record-edit-form>
+</template>

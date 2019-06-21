@@ -1,8 +1,5 @@
 import { LightningElement, api, track } from 'lwc';
-// User Id
-import uId from '@salesforce/user/Id';
-// Importa metdodo Apex
-import userHasEncryptedData from '@salesforce/apex/UserUtils.userHasEncryptedData';
+
 import FIRST_NAME from '@salesforce/schema/Contact.FirstName';
 import LAST_NAME from '@salesforce/schema/Contact.LastName';
 import E_PIN from '@salesforce/schema/Contact.e_Pin__c';
@@ -12,24 +9,12 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent'
 
 export default class ContactEPinFormLWC extends LightningElement {
     @api recordId; 
-    @track viewEncryptedData = false;
     @track error;
     @track stack;
     @track showSpinner = true;
     @track ePin;
-    userId = uId;
 
     fields = [FIRST_NAME, LAST_NAME, E_PIN, BIRTHDATE];
-
-    connectedCallback() {
-        userHasEncryptedData({userId: this.userId})
-            .then(result => {
-                this.viewEncryptedData = result;
-            })
-            .catch(error => {
-                this.error = error;
-            });
-    }
 
     handlePinBlur(event) {
         this.ePin = event.target.value;
@@ -57,7 +42,7 @@ export default class ContactEPinFormLWC extends LightningElement {
             title: 'Success!',
             message: 'Record Updated Succesfully!',
             variant: 'success'
-        });
+        }); 
         this.dispatchEvent(ev);          
     }
 
