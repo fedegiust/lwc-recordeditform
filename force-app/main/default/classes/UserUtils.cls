@@ -7,7 +7,7 @@ public with sharing class UserUtils {
                                                    WHERE PermissionSet.PermissionsViewEncryptedData = true
                                                    AND AssigneeId = :userId];
 
-        if(psaEncrypt.isEmpty()){
+        if(psaEncrypt == null || psaEncrypt.isEmpty()){
             return false;
         } else{
             return true;

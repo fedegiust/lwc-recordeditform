@@ -31,9 +31,10 @@
     ```
 5. Create Standard User
     ```
-    sfdx force:user:create --setalias standard-user
+    sfdx force:user:create --setalias suser-no-encrypted
+    sfdx force:user:create --setalias suser-view-encrypted
     ```
 6. Generate Password
     ```
-    sfdx force:user:password:generate --targetusername standard-user
+    sfdx force:user:password:generate --targetusername suser-view-encrypted
     ```
