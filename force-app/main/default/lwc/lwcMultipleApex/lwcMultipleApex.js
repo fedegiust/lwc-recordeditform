@@ -5,6 +5,7 @@ import methodNameB from '@salesforce/apex/ClassB.methodName';
 export default class LwcMultipleApex extends LightningElement {
     @track stringA;
     @track stringB;
+    @track error;
 
     connectedCallback() {
         methodNameA()

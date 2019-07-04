@@ -6,17 +6,17 @@
             "c/contactEPinFormLWC": [
                 "contactEPinFormLWC/contactEPinFormLWC.js"
             ],
-            "c/lwcMultipleApex": [
-                "lwcMultipleApex/lwcMultipleApex.js"
-            ],
-            "c/lwcWire": [
-                "lwcWire/lwcWire.js"
-            ],
             "c/lwcMap": [
                 "lwcMap/lwcMap.js"
             ],
+            "c/lwcMultipleApex": [
+                "lwcMultipleApex/lwcMultipleApex.js"
+            ],
             "c/lwcRecordForm": [
                 "lwcRecordForm/lwcRecordForm.js"
+            ],
+            "c/lwcWire": [
+                "lwcWire/lwcWire.js"
             ]
         }
     },

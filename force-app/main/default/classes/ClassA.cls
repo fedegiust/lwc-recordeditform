@@ -1,6 +1,6 @@
 public with sharing class ClassA {
     @AuraEnabled
     public static string methodName(){
-        return 'String from Class A';
+        return 'String from Class A Actualizada';
     }
 }
