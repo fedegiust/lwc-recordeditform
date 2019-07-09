@@ -14,6 +14,7 @@ export default class LwcMultipleApex extends LightningElement {
             })
             .catch(error => {
                 this.error = error;
+                console.error('ERROR: ', this.error);
             });   
 
         methodNameB()
